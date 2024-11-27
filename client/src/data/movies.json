@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "title": "The Untamed",
+        "Alternative Title": "Chen Qing Ling",
+        "year": 2019,
+        "country": "China",
+        "synopsis": "Two talented disciples of respectable magical clans unite to unravel the mystery behind a series of tragedies.",
+        "avaibility": ["Netflix", "Iqiyi"],
+        "status": "completed",
+        "genres": ["Fantasy", "Adventure"],
+        "coverImage": "https://i.pinimg.com/originals/e1/24/f4/e124f45137ce4537ab66675181543f00.jpg",
+        "actors": [
+            {
+                "namaActor": "Xiao Zhan",
+                "fotoActor": "https://cdn1-production-images-kly.akamaized.net/7ZPDmdOSfRB0ZipRXUFgqXPLYPI=/800x1066/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2966880/original/078605400_1573700205-64566501_303125957233221_8829698188034502959_n.jpg"
+            },
+            {
+                "namaActor": "Wang Yibo",
+                "fotoActor": "https://www.tionghoa.org/wp-content/uploads/2022/09/wangyibo.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/2ldvydu34Is?si=YaYvUOm_FpNb7837",
+        "award": "Best Drama",
+        "rating": 9.0,
+        "views": 2000000
+    },
+    {
+        "id": 2,
+        "title": "Love and Redemption",
+        "Alternative Title": "Liu Li",
+        "year": 2020,
+        "country": "China",
+        "synopsis": "A story of love and war between two people who have to overcome countless challenges.",
+        "avaibility": ["Netflix"],
+        "status": "completed",
+        "genres": ["Romance", "Fantasy"],
+        "coverImage": "https://i.pinimg.com/550x/6b/12/70/6b1270cfb653a8a9efe8c21b1f15d857.jpg",
+        "actors": [
+            {
+                "namaActor": "Cheng Yi",
+                "fotoActor": "https://i.pinimg.com/736x/8c/1a/d1/8c1ad1330dc48c18bc0fb06d05d6d5b3.jpg"
+            },
+            {
+                "namaActor": "Yuan Bingyan",
+                "fotoActor": "https://www.tionghoa.org/wp-content/uploads/2022/09/Yuan_Bing_Yan.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/Kl8pzQzkqQ0?si=wf2zStXNVvW8zVmJ",
+        "award": "Best Costume Design",
+        "rating": 8.7,
+        "views": 1500000
+    },
+    {
+        "id": 3,
+        "title": "Word of Honor",
+        "Alternative Title": "Shan He Ling",
+        "year": 2021,
+        "country": "China",
+        "synopsis": "A former leader of a powerful organization and a mysterious wanderer join forces to solve mysteries.",
+        "avaibility": ["Iqiyi", "Netflix"],
+        "status": "completed",
+        "genres": ["Action", "Wuxia"],
+        "coverImage": "https://cdn0-production-images-kly.akamaized.net/8TLicddGtmG0xVIt2XKH8Ami-Is=/800x1066/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3484297/original/051751800_1623836661-Word_of_Honor_0.jpg",
+        "actors": [
+            {
+                "namaActor": "Zhang Zhehan",
+                "fotoActor": "https://i.pinimg.com/originals/42/99/9c/42999cd163414a61df59b6eee99a2b52.jpg"
+            },
+            {
+                "namaActor": "Gong Jun",
+                "fotoActor": "https://i.pinimg.com/236x/55/7f/70/557f70f5f96fbfb2b0ac8a6fa93f93a8.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/rQr3DnfCAbA?si=QewFlhaJyElbsdFA",
+        "award": "Best Action Choreography",
+        "rating": 8.8,
+        "views": 1800000
+    },
+    {
+        "id": 4,
+        "title": "Crash Landing on You",
+        "Alternative Title": "Crash Landing on You",
+        "year": 2019,
+        "country": "Korea",
+        "synopsis": "A South Korean heiress accidentally lands in North Korea and falls in love with a North Korean army officer.",
+        "avaibility": ["Netflix"],
+        "status": "completed",
+        "genres": ["Romance", "Drama"],
+        "coverImage": "https://upload.wikimedia.org/wikipedia/id/6/64/Crash_Landing_on_You_main_poster.jpg",
+        "actors": [
+            {
+                "namaActor": "Hyun Bin",
+                "fotoActor": "https://cdn0-production-images-kly.akamaized.net/kdCTWWfMp-vKLRaWG6IrwceplqM=/800x800/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4143986/original/021873000_1662081136-300669292_653375059087487_6042128358509410096_n.jpg"
+            },
+            {
+                "namaActor": "Son Ye-jin",
+                "fotoActor": "https://asianwiki.com/images/c/cb/Son_Ye-Jin-1982-p1.jpeg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/GVQGWgeVc4k?si=Jd0glrH5QdGS3Rza",
+        "award": "Best Couple Award",
+        "rating": 9.5,
+        "views": 3000000
+    },
+    {
+        "id": 5,
+        "title": "Goblin",
+        "Alternative Title": "Guardian: The Lonely and Great God",
+        "year": 2016,
+        "country": "Korea",
+        "synopsis": "A goblin seeks a bride to end his immortal life but falls in love with her instead.",
+        "avaibility": ["Netflix"],
+        "status": "completed",
+        "genres": ["Fantasy", "Romance"],
+        "coverImage": "https://upload.wikimedia.org/wikipedia/id/6/69/Golbin_Poster.jpg",
+        "actors": [
+            {
+                "namaActor": "Gong Yoo",
+                "fotoActor": "https://cdn1-production-images-kly.akamaized.net/4r2h0m3McuNtQ_DLRHBQpvcjMhY=/0x0:648x648/800x800/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2850327/original/014344600_1562820181-gong_yoo_1.jpg"
+            },
+            {
+                "namaActor": "Kim Go-eun",
+                "fotoActor": "https://cdn-1.timesmedia.co.id/images/2023/04/19/Kim-Go-Eun.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/8AcNEVUzV4o?si=Hnm0xGs3D8whWip8",
+        "award": "Best Drama",
+        "rating": 9.2,
+        "views": 2500000
+    },
+    {
+        "id": 6,
+        "title": "Itaewon Class",
+        "Alternative Title": "Itaewon Class",
+        "year": 2020,
+        "country": "Korea",
+        "synopsis": "An ex-convict and his friends strive to bring down a powerful food conglomerate.",
+        "avaibility": ["Netflix"],
+        "status": "completed",
+        "genres": ["Drama", "Business"],
+        "coverImage": "https://upload.wikimedia.org/wikipedia/id/f/f9/Itaewon_Class_poster.jpg",
+        "actors": [
+            {
+                "namaActor": "Park Seo-joon",
+                "fotoActor": "https://asset.kompas.com/crops/80T0FDPf3iFP9diUIEfIJxwWEnU=/0x0:900x600/750x500/data/photo/2020/03/30/5e81be96ba58f.png"
+            },
+            {
+                "namaActor": "Kim Da-mi",
+                "fotoActor": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Kim_Dami_20180830.jpg/220px-Kim_Dami_20180830.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/NNP8m3gaaFE?si=cwR95uDe76yLcfvZ",
+        "award": "Best Actor",
+        "rating": 8.5,
+        "views": 2200000
+    },
+    {
+        "id": 7,
+        "title": "Attack on Titan",
+        "Alternative Title": "Shingeki no Kyojin",
+        "year": 2013,
+        "country": "Japan",
+        "synopsis": "In a world where humanity is on the brink of extinction, young warriors fight against gigantic Titans.",
+        "avaibility": ["Netflix", "Crunchyroll"],
+        "status": "ongoing",
+        "genres": ["Action", "Fantasy"],
+        "coverImage": "https://www.suarasurabaya.net/wp-content/uploads/2021/04/Attack-on-Titan.jpeg",
+        "actors": [
+            {
+                "namaActor": "Yuki Kaji",
+                "fotoActor": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/27th_Tokyo_International_Film_Festival_Y%C5%ABki_Kaji.jpg/1200px-27th_Tokyo_International_Film_Festival_Y%C5%ABki_Kaji.jpg"
+            },
+            {
+                "namaActor": "Yui Ishikawa",
+                "fotoActor": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Jurassic_World_Fallen_Kingdom_Japan_Premiere_Red_Carpet_Ishikawa_Yui_%2843101892301%29.jpg/1200px-Jurassic_World_Fallen_Kingdom_Japan_Premiere_Red_Carpet_Ishikawa_Yui_%2843101892301%29.jpg"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/LV-nazLVmgo?si=Yyfz6w_lZoyewrVk",
+        "award": "Best Animation",
+        "rating": 9.0,
+        "views": 3500000
+    },
+    {
+        "id": 8,
+        "title": "Demon Slayer",
+        "Alternative Title": "Kimetsu no Yaiba",
+        "year": 2019,
+        "country": "Japan",
+        "synopsis": "A young boy becomes a demon slayer to avenge his family and cure his sister from a demon curse.",
+        "avaibility": ["Netflix", "Crunchyroll"],
+        "status": "ongoing",
+        "genres": ["Action", "Supernatural"],
+        "coverImage": "https://assets-a1.kompasiana.com/items/album/2023/05/18/kny-64664af408a8b5452a5bc922.jpg",
+        "actors": [
+            {
+                "namaActor": "Natsuki Hanae",
+                "fotoActor": "https://cdn.idntimes.com/content-images/community/2021/02/1612591870943-510416921-538b65194ca5d43df1ac9a6e67de4ee9-4ba46eb970b60541692d116878b07be6_600x400.jpg"
+            },
+            {
+                "namaActor": "Akari Kito",
+                "fotoActor": "https://images.mubicdn.net/images/cast_member/673079/cache-641696-1612491928/image-w856.jpg"
+            }
+        ],
+        "link trailer":"https://www.youtube.com/embed/VQGCKyvzIM4?si=Zj_4ix32E5WWEs9Y",
+        "award": "Best Fight Scene",
+        "rating": 8.9,
+        "views": 3200000
+    },
+    {
+        "id": 9,
+        "title": "Suzume",
+        "Alternative Title": "Suzume no Tojimari",
+        "year": 2022,
+        "country": "Japan",
+        "synopsis": "A teenage girl discovers a mysterious door that leads to a world where she must save the world from impending disasters.",
+        "avaibility": ["Crunchyroll"],
+        "status": "upcoming",
+        "genres": ["Fantasy", "Adventure"],
+        "coverImage": "https://upload.wikimedia.org/wikipedia/id/7/7f/Suzume_no_Tojimari_poster.jpg",
+        "actors": [
+            {
+                "namaActor": "Nanoka Hara",
+                "fotoActor": "https://i.mydramalist.com/0wBwge_5c.jpg"
+            },
+            {
+                "namaActor": "Junya Enoki",
+                "fotoActor": "https://s4.anilist.co/file/anilistcdn/staff/large/n119319-yIrrUOUaJuSm.png"
+            }
+        ],
+        "link trailer": "https://www.youtube.com/embed/g0JMPkn7Wuo?si=Icq76-IkqUeNsDxa",
+        "award": "Upcoming Film Festival",
+        "rating": 0.0,
+        "views": 0
+    }
+]
