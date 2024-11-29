@@ -49,30 +49,33 @@
 
 
 
-<h1>Contributors</h1>
-<!-- image round -->
+<h1 align="center">🌟 Contributors 🌟</h1>
 <div align="center">
-  <!-- table border 0 -->
-    <table border="0">
-        <tr>
-        <td align="center">
-            <a href="https://github.com/aryrk">
-                <img src="https://avatars.githubusercontent.com/u/74758565?v=4" width="100" alt="aryrk" style="border-radius: 50%" />
-            </a>
-            <br>
-            <a href="https://github.com/aryrk" style="color:white;">aryrk</a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/HasnaFitriyaniK">
-                <img src="https://avatars.githubusercontent.com/u/75944739?v=4" width="100" alt="HasnaFitriyaniK" style="border-radius: 50%" />
-            </a>
-            <br>
-            <a href="https://github.com/HasnaFitriyaniK" style="color:white;">HasnaFitriyaniK</a>
-        </td>
-        </tr>
-        </table>
-    Thanks to all contributors who have helped in the development,<br> without you this project would not have been completed. 💖
+  <p>Meet the amazing people who made this project possible! 🙌</p>
+  <table border="0">
+    <tr>
+      <td align="center">
+        <a href="https://github.com/MahardikaPratama">
+          <img src="https://avatars.githubusercontent.com/u/74758565?v=4" width="100" alt="MahardikaPratama" style="border-radius: 50%; border: 2px solid #ffd700;" />
+        </a>
+        <br>
+        <a href="https://github.com/MahardikaPratama" style="color:#4caf50; font-weight: bold; text-decoration: none;">MahardikaPratama</a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/niqanabila16">
+          <img src="https://avatars.githubusercontent.com/u/75944739?v=4" width="100" alt="niqanabila16" style="border-radius: 50%; border: 2px solid #ffd700;" />
+        </a>
+        <br>
+        <a href="https://github.com/niqanabila16" style="color:#4caf50; font-weight: bold; text-decoration: none;">niqanabila16</a>
+      </td>
+    </tr>
+  </table>
+  <p style="margin-top: 20px; font-size: 16px; color: #333;">
+    Huge thanks to all contributors for their dedication and effort! ❤️ <br> 
+    Together, we turned an idea into reality. 🚀
+  </p>
 </div>
+
 
 <h1>Technologies</h1>
 <div align="center">
