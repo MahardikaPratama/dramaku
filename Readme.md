@@ -127,75 +127,75 @@
 </div>
 
 
+<h1 align="center">🚀 Setup Guide for Dramaku</h1>
+
 <h1>Setup</h1>
+<p>Follow the steps below to set up the application locally:</p>
 
-1. Clone the repository and install the dependencies.
+<ol>
+  <li>Clone the repository and install the dependencies:</li>
+  <pre><code>git clone https://github.com/MahardikaPratama/Webdev-Praktikum.git</code></pre>
 
-```bash
-git clone https://github.com/aryrk/WebDev_kel-4_PlutoCinema.git
-```
-2. Copy the `.env.example` file <b>inside server folder</b> and rename it to `.env`.
+  <li>Copy the <code>.env.example</code> file <b>inside the server folder</b> and rename it to <code>.env</code>.</li>
 
-3. Fill in the `.env` file inside <b>server, client, and database</b> folder with your own configuration.
+  <li>Fill in the <code>.env</code> file inside the <b>server</b> folder with your own configuration.</li>
+
+  <li>Copy the <code>.env.example</code> file <b>inside the database folder</b> and rename it to <code>.env</code>.</li>
+
+  <li>Fill in the <code>.env</code> file inside the <b>database</b> folder with your own configuration.</li>
+</ol>
 
 <h1>Installation (Local)</h1>
-Ensure you have Node.js installed on your machine. If not, you can download it <a href="https://nodejs.org/en/download/">here</a>.
+<p>Ensure you have the following software installed on your computer:</p>
 
-- Create a database named 'plutocinema'.
+<ul>
+  <li><strong>Node.js</strong><br>
+    Node.js is the JavaScript runtime required to run this application. If you haven't installed it yet, you can download it <a href="https://nodejs.org/en/download/">here</a> <i class="fas fa-download"></i>.
+  </li>
+  
+  <li><strong>PostgreSQL</strong><br>
+    PostgreSQL is used as the database for this application. You can download it <a href="https://www.postgresql.org/download/">here</a> <i class="fas fa-database"></i>.
+  </li>
+</ul>
 
+<p>If you're using Windows, you can run the following batch files:</p>
 
-
-if you are using windows, you can run the following files:
-
-```bash
-1_setup.bat
+<pre><code>1_setup.bat
 2_database_seeder.bat
-3_run.bat
-```
+3_run.bat</code></pre>
 
-else, you can run the following commands:
+<p>Alternatively, if you're on a different OS, run the following commands:</p>
 
-```bash
-python database/seeder.py
-```
+<pre><code>cd database
+python seeder.py</code></pre>
 
-```bash
-cd server
+<pre><code>cd server
 npm install
-npm start
-```
+npm start</code></pre>
 
-```bash
-cd client
+<pre><code>cd client
 npm install
-npm run dev
-```
+npm start</code></pre>
 
 <h1>Installation (Docker)</h1>
-  
-  Ensure you have Docker installed on your machine. If not, you can download it <a href="https://www.docker.com/products/docker-desktop">here</a>.
-  
-if you are using windows, you can run the following files:
-```bash
-DOCKER_build.bat
-DOCKER_start.bat
-```
+<p>Ensure you have Docker installed on your machine. If not, you can download it <a href="https://www.docker.com/products/docker-desktop">here</a> <i class="fab fa-docker"></i>.</p>
 
-or equivalent commands:
+<p>If you're using Windows, you can run the following batch files:</p>
 
-```bash
-docker-compose up --build
-```
+<pre><code>DOCKER_build.bat
+DOCKER_start.bat</code></pre>
 
+<p>Or run the following command to start the application with Docker:</p>
+
+<pre><code>docker-compose up --build</code></pre>
 
 <h1>Licence</h1>
-<p>The Pluto Cinema project is licensed under the MIT License. See the <a href="https://opensource.org/license/MIT">MIT License</a> for more information.</p>
+<p>The <strong>DramaKu</strong> project is licensed under the MIT License. See the <a href="https://opensource.org/license/MIT">MIT License</a> for more information.</p>
 
-
-<p>Special thanks to <a href="https://www.polban.ac.id/">Politeknik Negeri Bandung</a> for providing the opportunity to learn and develop this project.</p>
+<p>Special thanks to <a href="https://www.polban.ac.id/">Politeknik Negeri Bandung</a> for providing the opportunity to learn and develop this project. <i class="fas fa-gratipay"></i></p>
 
 <br>
 
 <div align="center">
-  <img src="https://www.polban.ac.id/wp-content/uploads/2021/11/MASTER-LOGO-POLBAN-SMALL-1.png" height="100" alt="polban logo"  />
+  <img src="https://www.polban.ac.id/wp-content/uploads/2021/11/MASTER-LOGO-POLBAN-SMALL-1.png" height="100" alt="Polban Logo" />
 </div>
