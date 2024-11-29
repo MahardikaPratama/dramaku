@@ -127,44 +127,37 @@
 </div>
 
 
-<h1 align="center">🚀 Setup Guide for Dramaku</h1>
+<h1 style="text-align: center; color: #4CAF50;">Setup</h1>
+<p style="font-size: 18px;">Follow the steps below to set up the application:</p>
 
-<h1>Setup</h1>
-<p>Follow the steps below to set up the application locally:</p>
-
-<ol>
-  <li>Clone the repository and install the dependencies:</li>
-  <pre><code>git clone https://github.com/MahardikaPratama/Webdev-Praktikum.git</code></pre>
-
-  <li>Copy the <code>.env.example</code> file <b>inside the server folder</b> and rename it to <code>.env</code>.</li>
-
-  <li>Fill in the <code>.env</code> file inside the <b>server</b> folder with your own configuration.</li>
-
-  <li>Copy the <code>.env.example</code> file <b>inside the database folder</b> and rename it to <code>.env</code>.</li>
-
-  <li>Fill in the <code>.env</code> file inside the <b>database</b> folder with your own configuration.</li>
+<ol style="font-size: 16px; line-height: 1.6;">
+  <li><strong>Clone the repository and install the dependencies:</strong>
+    <pre><code>git clone https://github.com/MahardikaPratama/Webdev-Praktikum.git</code></pre>
+  </li>
+  <li><strong>Copy the <code>.env.example</code> file inside the <b>server folder</b> and rename it to <code>.env</code>.</strong></li>
+  <li><strong>Fill in the <code>.env</code> file inside <b>server</b> folder with your own configuration.</strong></li>
+  <li><strong>Copy the <code>.env.example</code> file inside the <b>database folder</b> and rename it to <code>.env</code>.</strong></li>
+  <li><strong>Fill in the <code>.env</code> file inside <b>database</b> folder with your own configuration.</strong></li>
 </ol>
 
-<h1>Installation (Local)</h1>
-<p>Ensure you have the following software installed on your computer:</p>
+<h1 style="text-align: center; color: #2196F3;">Installation (Local)</h1>
+<p style="font-size: 18px;">Make sure you have the following software installed on your computer:</p>
 
-<ul>
+<ul style="font-size: 16px; line-height: 1.6;">
   <li><strong>Node.js</strong><br>
-    Node.js is the JavaScript runtime required to run this application. If you haven't installed it yet, you can download it <a href="https://nodejs.org/en/download/">here</a> <i class="fas fa-download"></i>.
+    Node.js is required to run this application. Download it from <a href="https://nodejs.org/en/download/" target="_blank">here</a>.
   </li>
-  
   <li><strong>PostgreSQL</strong><br>
-    PostgreSQL is used as the database for this application. You can download it <a href="https://www.postgresql.org/download/">here</a> <i class="fas fa-database"></i>.
+    PostgreSQL is used as the database for this application. Download it from <a href="https://www.postgresql.org/download/" target="_blank">here</a>.
   </li>
 </ul>
 
-<p>If you're using Windows, you can run the following batch files:</p>
-
+<p style="font-size: 16px;">If you're using Windows, you can run the following batch files:</p>
 <pre><code>1_setup.bat
 2_database_seeder.bat
 3_run.bat</code></pre>
 
-<p>Alternatively, if you're on a different OS, run the following commands:</p>
+<p style="font-size: 16px;">For other systems, run these commands:</p>
 
 <pre><code>cd database
 python seeder.py</code></pre>
@@ -177,22 +170,20 @@ npm start</code></pre>
 npm install
 npm start</code></pre>
 
-<h1>Installation (Docker)</h1>
-<p>Ensure you have Docker installed on your machine. If not, you can download it <a href="https://www.docker.com/products/docker-desktop">here</a> <i class="fab fa-docker"></i>.</p>
+<h1 style="text-align: center; color: #FF9800;">Installation (Docker)</h1>
+<p style="font-size: 18px;">Ensure you have Docker installed on your machine. If not, you can download it <a href="https://www.docker.com/products/docker-desktop" target="_blank">here</a>.</p>
 
-<p>If you're using Windows, you can run the following batch files:</p>
-
+<p style="font-size: 16px;">If you're using Windows, you can run the following batch files:</p>
 <pre><code>DOCKER_build.bat
 DOCKER_start.bat</code></pre>
 
-<p>Or run the following command to start the application with Docker:</p>
-
+<p style="font-size: 16px;">Or run the following command:</p>
 <pre><code>docker-compose up --build</code></pre>
 
-<h1>Licence</h1>
-<p>The <strong>DramaKu</strong> project is licensed under the MIT License. See the <a href="https://opensource.org/license/MIT">MIT License</a> for more information.</p>
+<h1 style="text-align: center; color: #F44336;">Licence</h1>
+<p style="font-size: 16px;">The Dramaku project is licensed under the <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a>. For more details, refer to the license page.</p>
 
-<p>Special thanks to <a href="https://www.polban.ac.id/">Politeknik Negeri Bandung</a> for providing the opportunity to learn and develop this project. <i class="fas fa-gratipay"></i></p>
+<p style="font-size: 16px;">Special thanks to <a href="https://www.polban.ac.id/" target="_blank">Politeknik Negeri Bandung</a> for providing the opportunity to learn and develop this project.</p>
 
 <br>
 
