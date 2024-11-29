@@ -97,26 +97,36 @@
 
 
 
-<h1>Technologies</h1>
+<h1 align="center">🚀 Technologies We Use 🚀</h1>
 <div align="center">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="react" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="vite" />
-    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="nodejs" />
-    <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" />
-    <img src="https://img.shields.io/badge/React%20Query-000000?style=for-the-badge&logo=react-query&logoColor=white" alt="react query" />
-    <img src="https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=axios&logoColor=white" alt="axios" />
-    <br>
-    <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap" />
-    <img src="https://img.shields.io/badge/Font%20Awesome-339AF0?style=for-the-badge&logo=font-awesome&logoColor=white" alt="font awesome" />
-    <img src="https://img.shields.io/badge/FilePond-14d6ea?style=for-the-badge&logo=filepond&logoColor=white" alt="filepond" />
-    <img src="https://img.shields.io/badge/select2-ff0000?style=for-the-badge&logo=filepond&logoColor=white" alt="select2" />
-    <img src="https://img.shields.io/badge/DataTables-2867b6?style=for-the-badge&logo=filepond&logoColor=white" alt="DataTables" />
-    <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON Web Tokens&logoColor=white" alt="jwt" />
-    <img src="https://img.shields.io/badge/Nodemailer-22b573?style=for-the-badge" alt="jwt" />
-    <img src="https://img.shields.io/badge/Cloudinary-3333ff?style=for-the-badge&logo=cloudinary&logoColor=white" alt="cloudinary" />
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="docker" />
-    <img src="https://img.shields.io/badge/and%20many%20more-000000?style=for-the-badge" alt="and many more" />
+  <p>Powered by cutting-edge technologies to deliver the best user experience!</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+    <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="TailwindCSS" />
+    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+    <img src="https://img.shields.io/badge/Font%20Awesome-339AF0?style=for-the-badge&logo=font-awesome&logoColor=white" alt="Font Awesome" />
+    <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios" />
+    <img src="https://img.shields.io/badge/Date--Fns-3D9970?style=for-the-badge&logo=date-fns&logoColor=white" alt="Date-Fns" />
+    <img src="https://img.shields.io/badge/React%20Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white" alt="React Query" />
+    <img src="https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router" />
+    <img src="https://img.shields.io/badge/Bcrypt-35495E?style=for-the-badge&logo=lock&logoColor=white" alt="Bcrypt" />
+    <img src="https://img.shields.io/badge/Cloudinary-343A40?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary" />
+    <img src="https://img.shields.io/badge/Cookie%20Parser-D14836?style=for-the-badge&logo=cookies&logoColor=white" alt="Cookie Parser" />
+    <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JWT" />
+    <img src="https://img.shields.io/badge/Multer-FF6F00?style=for-the-badge&logo=multer&logoColor=white" alt="Multer" />
+    <img src="https://img.shields.io/badge/Nodemailer-22B573?style=for-the-badge&logo=email&logoColor=white" alt="Nodemailer" />
+    <img src="https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=passport&logoColor=white" alt="Passport" />
+    <img src="https://img.shields.io/badge/&%20many%20more-000000?style=for-the-badge" alt="and many more" />
+
+  </div>
+  <p style="margin-top: 20px; font-size: 16px; color: #333;">
+    These technologies come together to create a seamless, secure, and fast experience for our users. 💻🌟
+  </p>
 </div>
+
 
 <h1>Setup</h1>
 
