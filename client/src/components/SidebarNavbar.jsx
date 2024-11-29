@@ -18,8 +18,9 @@ const SidebarNavbar = ({ onCountryFilter, currentFilter, searchTerm, onSearchCha
     const navigate = useNavigate();
 
     const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+    // isi dengan link gambar default profil kosong atau polos
+    const DefaultPreviewImage ="https://cdn.idntimes.com/content-images/post/20240207/33bac083ba44f180c1435fc41975bf36-ca73ec342155d955387493c4eb78c8bb.jpg";
 
-    const DefaultPreviewImage = "https://divedigital.id/wp-content/uploads/2021/10/1-min.png";
 
     const {
         data: countries,
@@ -175,7 +176,7 @@ const SidebarNavbar = ({ onCountryFilter, currentFilter, searchTerm, onSearchCha
                                 <span className="sr-only">Open user menu</span>
                                 <img
                                     className="w-8 h-8 rounded-full"
-                                    src={previewImage ? previewImage : DefaultPreviewImage}
+                                    src={previewImage || DefaultPreviewImage}
                                     alt="User"
                                 />
                             </button>
@@ -218,8 +219,6 @@ const SidebarNavbar = ({ onCountryFilter, currentFilter, searchTerm, onSearchCha
                                     )}
                                 </div>
                             )}
-
-
                         </div>
                     </div>
                 </div>

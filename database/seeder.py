@@ -1,42 +1,71 @@
 import pandas as pd
 import psycopg2
 import numpy as np
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env
+success = load_dotenv("/app/database/.env")
+
+# Jika gagal, coba muat .env lokal
+if not success:
+    print("Menggunakan .env lokal")
+    load_dotenv()
+
+# Mengambil data koneksi dari file .env
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
+
+# Menentukan DB_HOST yang sesuai dengan lingkungan
+if 'DOCKER' in os.environ:  # Misalnya cek variabel lingkungan DOCKER
+    DB_HOST = "db"  # Gunakan nama kontainer database dalam Docker
+else:
+    DB_HOST = os.getenv("DB_HOST", "localhost")  # Jika di lokal, gunakan localhost
+
+print ("DB_HOST: ", DB_HOST)
 # Mengatur koneksi ke PostgreSQL
 conn = None
 cursor = None
 try:
     # Koneksi ke PostgreSQL (tanpa database untuk membuatnya)
     conn = psycopg2.connect(
-        user="postgres",
-        password="113365",
-        host="localhost",
-        port="5432"
+        user=DB_USER,
+        password=DB_PASSWORD,
+        host=DB_HOST,
+        port=DB_PORT
     )
     conn.autocommit = True
 
     # Membuat cursor
     cursor = conn.cursor()
 
-    # Membuat database baru jika belum ada
-    cursor.execute("SELECT 1 FROM pg_catalog.pg_database WHERE datname = 'dramaku_1';")
+    # Membuat database 
+    cursor.execute(f"SELECT 1 FROM pg_catalog.pg_database WHERE datname = '{DB_NAME}';")
     exists = cursor.fetchone()
-    if not exists:
-        cursor.execute("CREATE DATABASE dramaku_1;")
+    if exists:
+        cursor.execute(f"DROP DATABASE {DB_NAME};")
+        print(f"Database '{DB_NAME}' telah dihapus.")
 
-    # Menutup cursor dan koneksi
+    # Membuat database baru
+    cursor.execute(f"CREATE DATABASE {DB_NAME};")
+    print(f"Database '{DB_NAME}' berhasil dibuat.")
+
+    # Menutup cursor dan koneksi awal
     cursor.close()
     conn.close()
 
     # Koneksi ke database baru
     conn = psycopg2.connect(
-        dbname="dramaku_1",
-        user="postgres",
-        password="113365",
-        host="localhost",
-        port="5432"
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        host=DB_HOST,
+        port=DB_PORT
     )
     conn.autocommit = True
+    print(f"Berhasil terhubung ke database '{DB_NAME}'.")
 
     # Membuat cursor
     cursor = conn.cursor()
@@ -117,11 +146,7 @@ try:
             foto_profil_url TEXT,
             created_at TIMESTAMP,
             updated_at TIMESTAMP,
-            isverified BOOLEAN DEFAULT FALSE,
-            verification_token VARCHAR(5),
-            verification_token_expiration TIMESTAMP,
-            reset_password_token VARCHAR(5),
-            reset_token_expiration TIMESTAMP 
+            is_suspended BOOLEAN DEFAULT FALSE
         );
         """,
         "movies": """
@@ -293,8 +318,8 @@ try:
                 cursor.execute("INSERT INTO platforms (platform_id, platform_name, created_at, updated_at) VALUES (%s, %s, %s, %s)",
                                (row['platform_id'], row['platform_name'], row['created_at'], row['updated_at']))
             elif sheet == 'users':
-                cursor.execute("INSERT INTO users (user_id, username, email, password, role, foto_profil_url, created_at, updated_at, isverified, verification_token, verification_token_expiration, reset_password_token, reset_token_expiration) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                               (row['user_id'], row['username'], row['email'], row['password'], row['role'], row['foto_profil_url'], row['created_at'], row['updated_at'], row['isverified'], row['verification_token'], row['verification_token_expiration'], row['reset_password_token'], row['reset_token_expiration']))
+                cursor.execute("INSERT INTO users (user_id, username, email, password, role, foto_profil_url, created_at, updated_at, is_suspended) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                               (row['user_id'], row['username'], row['email'], row['password'], row['role'], row['foto_profil_url'], row['created_at'], row['updated_at'], row['is_suspended']))
             elif sheet == 'movies':
                 cursor.execute("INSERT INTO movies (movie_id, poster_url, title, alternative_title, movie_rate, views, year, synopsis, release_status, approval_status, link_trailer, country_id, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                                (row['movie_id'], row['poster_url'], row['title'], row['alternative_title'], row['movie_rate'], row['views'], row['year'], row['synopsis'], row['release_status'], row['approval_status'], row['link_trailer'], row['country_id'], row['user_id'], row['created_at'], row['updated_at']))

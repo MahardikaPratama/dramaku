@@ -72,6 +72,7 @@ const CmsDrama = () => {
         },
         {
             keepPreviousData: true,
+            enabled: !!userId,
         }
     );
 
