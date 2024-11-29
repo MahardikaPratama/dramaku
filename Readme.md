@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="150" src="https://i.pinimg.com/736x/0c/32/97/0c3297f3516a415219c7e89e16a4a3d2.jpg"  />
+  <img height="150" src="https://static.vecteezy.com/system/resources/previews/006/230/839/non_2x/initial-letter-d-with-reel-stripes-filmstrip-for-film-movie-cinema-production-studio-logo-inspiration-vector.jpg"  />
 </div>
 
 ###
