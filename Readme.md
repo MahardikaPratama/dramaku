@@ -56,14 +56,14 @@
     <tr>
       <td align="center">
         <a href="https://github.com/MahardikaPratama">
-          <img src="https://avatars.githubusercontent.com/u/74758565?v=4" width="100" alt="MahardikaPratama" style="border-radius: 50%; border: 2px solid #ffd700;" />
+          <img src="https://avatars.githubusercontent.com/u/117805307?v=4" width="100" alt="MahardikaPratama" style="border-radius: 50%; border: 2px solid #ffd700;" />
         </a>
         <br>
         <a href="https://github.com/MahardikaPratama" style="color:#4caf50; font-weight: bold; text-decoration: none;">MahardikaPratama</a>
       </td>
       <td align="center">
         <a href="https://github.com/niqanabila16">
-          <img src="https://avatars.githubusercontent.com/u/75944739?v=4" width="100" alt="niqanabila16" style="border-radius: 50%; border: 2px solid #ffd700;" />
+          <img src="https://avatars.githubusercontent.com/u/128698857?v=4" width="100" alt="niqanabila16" style="border-radius: 50%; border: 2px solid #ffd700;" />
         </a>
         <br>
         <a href="https://github.com/niqanabila16" style="color:#4caf50; font-weight: bold; text-decoration: none;">niqanabila16</a>
