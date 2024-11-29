@@ -76,6 +76,26 @@
   </p>
 </div>
 
+<h1 align="center">📚 Special Thanks to Our Lecturer 📚</h1>
+<div align="center">
+  <p>We extend our deepest gratitude to our inspiring lecturer, who guided us throughout this project. 🙏</p>
+  <table border="0">
+    <tr>
+      <td align="center">
+        <a href="https://github.com/sriratnawulan123">
+          <img src="https://avatars.githubusercontent.com/u/148301780?v=4" width="120" alt="sriratnawulan123" style="border-radius: 50%; border: 3px solid #4caf50;" />
+        </a>
+        <br>
+        <a href="https://github.com/sriratnawulan123" style="color:#ffd700; font-weight: bold; text-decoration: none; font-size: 18px;">Sri Ratna Wulan</a>
+      </td>
+    </tr>
+  </table>
+  <p style="margin-top: 20px; font-size: 16px; color: #333;">
+    Thank you for your invaluable support, guidance, and encouragement, which made this project a success. Your expertise and insights were our compass throughout the journey. 🌟  
+  </p>
+</div>
+
+
 
 <h1>Technologies</h1>
 <div align="center">
