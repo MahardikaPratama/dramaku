@@ -15,13 +15,22 @@
 ###
 
 <div align="center">
-  <img src="https://img.shields.io/github/contributors/MahardikaPratama/Webdev-Praktikum?color=red" alt="contributors" />
-    <img src="https://img.shields.io/github/commit-activity/m/MahardikaPratama/Webdev-Praktikum?color=blue" alt="commit activity" />
-    <img src="https://img.shields.io/github/last-commit/MahardikaPratama/Webdev-Praktikum?color=yellow" alt="last commit" />
-    <br>
-    <img src="https://img.shields.io/github/repo-size/MahardikaPratama/Webdev-Praktikum?color=green" alt="repo size" />
-    <img src="https://img.shields.io/github/deployments/MahardikaPratama/Webdev-Praktikum/Production?color=blue" alt="vercel build status" />
+  <!-- Badges for contributors, commit activity, and last commit -->
+  <img src="https://img.shields.io/github/contributors/MahardikaPratama/Webdev-Praktikum?color=red" alt="Contributors" />
+  <img src="https://img.shields.io/github/commit-activity/m/MahardikaPratama/Webdev-Praktikum?color=blue" alt="Commit Activity" />
+  <img src="https://img.shields.io/github/last-commit/MahardikaPratama/Webdev-Praktikum?color=yellow" alt="Last Commit" />
+  <br>
+  
+  <!-- Badges for repository size and license -->
+  <img src="https://img.shields.io/github/repo-size/MahardikaPratama/Webdev-Praktikum?color=green" alt="Repository Size" />
+  <img src="https://img.shields.io/github/license/MahardikaPratama/Webdev-Praktikum?color=orange" alt="License" />
+  <br>
+  
+  <!-- Badges for programming languages -->
+  <img src="https://img.shields.io/github/languages/top/MahardikaPratama/Webdev-Praktikum?color=purple" alt="Top Language" />
+  <img src="https://img.shields.io/github/languages/count/MahardikaPratama/Webdev-Praktikum?color=pink" alt="Languages Count" />
 </div>
+
 
 ###
 
