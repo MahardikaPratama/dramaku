@@ -68,7 +68,7 @@ const SidebarAdmin = () => {
 
                     <h2 className="flex items-center mb-4 text-2xl text-white">
                         <img
-                            src="https://i.pinimg.com/originals/2c/ae/fe/2caefe0fe73204830ee22868604390d5.png"
+                            src="https://res.cloudinary.com/dnw6u159c/image/upload/v1732899238/tksjaqibiihmty918wwm.png"
                             alt="Drama Icon"
                             className="w-6 h-6 p-1 mr-2 bg-white border rounded-full"
                         />

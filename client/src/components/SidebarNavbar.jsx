@@ -117,7 +117,7 @@ const SidebarNavbar = ({ onCountryFilter, currentFilter, searchTerm, onSearchCha
                             </button>
                             <a href="/" className="flex items-center ms-2 md:me-24">
                                 <img
-                                    src="https://i.pinimg.com/originals/2c/ae/fe/2caefe0fe73204830ee22868604390d5.png"
+                                    src="https://res.cloudinary.com/dnw6u159c/image/upload/v1732899238/tksjaqibiihmty918wwm.png"
                                     className="h-8 bg-white border rounded-full me-3"
                                     alt="Dramaku Logo"
                                 />

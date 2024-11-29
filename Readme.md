@@ -15,12 +15,12 @@
 ###
 
 <div align="center">
-  <img src="https://img.shields.io/github/contributors/aryrk/WebDev_kel-4_PlutoCinema?color=red" alt="contributors" />
-    <img src="https://img.shields.io/github/commit-activity/m/aryrk/WebDev_kel-4_PlutoCinema?color=blue" alt="commit activity" />
-    <img src="https://img.shields.io/github/last-commit/aryrk/WebDev_kel-4_PlutoCinema?color=yellow" alt="last commit" />
+  <img src="https://img.shields.io/github/contributors/MahardikaPratama/Webdev-Praktikum?color=red" alt="contributors" />
+    <img src="https://img.shields.io/github/commit-activity/m/MahardikaPratama/Webdev-Praktikum?color=blue" alt="commit activity" />
+    <img src="https://img.shields.io/github/last-commit/MahardikaPratama/Webdev-Praktikum?color=yellow" alt="last commit" />
     <br>
-    <img src="https://img.shields.io/github/repo-size/aryrk/WebDev_kel-4_PlutoCinema?color=green" alt="repo size" />
-    <img src="https://img.shields.io/github/deployments/aryrk/WebDev_kel-4_PlutoCinema/Production?color=blue" alt="vercel build status" />
+    <img src="https://img.shields.io/github/repo-size/MahardikaPratama/Webdev-Praktikum?color=green" alt="repo size" />
+    <img src="https://img.shields.io/github/deployments/MahardikaPratama/Webdev-Praktikum/Production?color=blue" alt="vercel build status" />
 </div>
 
 ###
