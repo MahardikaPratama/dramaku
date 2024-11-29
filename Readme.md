@@ -34,12 +34,18 @@
 
 ###
 
-<h1>About Pluto Cinema</h1>
-<p>Pluto Cinema is a web application that provides information about movies and TV series. This application is built using React, Express, and Vite. The data is fetched from the <a href="https://www.themoviedb.org/">The Movie Database (TMDb) </a> and <a href="https://www.omdbapi.com/">OMDb API</a> with total of <strong>500+ movies, 1000+ actors, and 3000+ comments</strong>.
-</p>
-<p>
-Our application has be deployed on Vercel and can be accessed <a href="https://web-dev-kel-4-pluto-cinema-client.vercel.app">here</a>.
-</p>
+<h1>About DramaKu</h1>  
+<p>DramaKu is a web platform designed for drama and TV series enthusiasts, similar to IMDb, offering comprehensive information about your favorite titles. The application is built using modern technologies: <strong>Express.js</strong> for the backend, <strong>React</strong> for the frontend, and <strong>PostgreSQL</strong> as the database to store data efficiently and systematically.  
+</p>  
+<p>All data is sourced from <a href="https://www.themoviedb.org/">The Movie Database (TMDb)</a>, providing up-to-date information on <strong>1000+ dramas, 2000+ actors, and thousands of user reviews and comments</strong>. DramaKu allows users to:  
+</p>  
+<ul>  
+  <li>Search for dramas by title, genre, or release year.</li>  
+  <li>View drama details such as synopsis, ratings, and cast lists.</li>  
+  <li>Write reviews and rate their favorite dramas.</li>  
+  <li>Save a personal watchlist to bookmark dramas they want to watch.</li>  
+</ul>  
+<p>DramaKu is designed to deliver an engaging user experience with a responsive interface, intuitive navigation, and fast performance. With a regularly updated database, DramaKu is the ultimate choice for drama enthusiasts seeking comprehensive and up-to-date references.</p>  
 
 
 
