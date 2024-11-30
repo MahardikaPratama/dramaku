@@ -19,9 +19,10 @@ const PORT = process.env.DB_PORT || 8080;
 
 // Middleware
 app.use(cors({
-    origin: "http://localhost:3000", // Ganti dengan URL frontend Anda
+    origin: ["https://dramaku.vercel.app", "http://localhost:3000"], // Ganti dengan URL frontend Anda
     credentials: true // Mengizinkan cookie
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -53,16 +54,6 @@ app.get(
     passport.authenticate("google", { scope: ["profile", "email"] }),
 );
 
-app.get("/test-db", async (req, res) => {
-    try {
-        const result = await pool.query("SELECT NOW()");
-        res.json({ message: "Database connected", time: result.rows[0].now });
-    } catch (error) {
-        console.error("Database query error", error);
-        res.status(500).json({ message: "Database connection failed" });
-    }
-});
-
 app.get(
     "/auth/google/callback",
     passport.authenticate("google", { failureRedirect: "/login" }),
@@ -78,10 +69,10 @@ app.get(
         // Kirim token JWT ke client sebagai cookie atau header
         res.cookie('token', token, {
             httpOnly: true, // Agar cookie hanya dapat diakses oleh server
-            secure: false,  // Set ini menjadi true jika menggunakan HTTPS
+            secure: true,  // Set ini menjadi true jika menggunakan HTTPS
             maxAge: 1000 * 60 * 60 * 24 // 1 hari
         });
-        res.redirect("http://localhost:3000");
+        res.redirect("https://dramaku.vercel.app/");
     }
 );
 
