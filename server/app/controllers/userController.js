@@ -194,7 +194,7 @@ exports.login = async (req, res) => {
             // Simpan token di HTTP-only cookie
             res.cookie('token', token, {
                 httpOnly: true,  // Tidak dapat diakses dari JavaScript
-                secure: false,
+                secure: process.env.NODE_ENV === "production",
                 sameSite: 'Strict', // Mencegah serangan CSRF
                 maxAge: 86400000, // Token berlaku selama 1 jam
             });
