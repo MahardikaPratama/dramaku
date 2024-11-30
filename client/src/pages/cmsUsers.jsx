@@ -33,7 +33,6 @@ const CmsUsers = () => {
     const { data, isLoading, isError } = useQuery(
         ['users', { searchTerm, currentPage }],
         async () => {
-            console.log("Fetching users with:", { searchTerm, currentPage });
             if (searchTerm) {
                 const response = await userDataService.searchUserByUsername(searchTerm, currentPage, entriesPerPage);
                 return response.data;

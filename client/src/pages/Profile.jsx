@@ -15,7 +15,6 @@ const Profile = () => {
         isError,
     } = useQuery("userProfile", async () => {
         const response = await userService.getProfile();
-        console.log("Fetched user data:", response.data); 
         return response.data;
     });
 

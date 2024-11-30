@@ -400,8 +400,6 @@ const CmsDramaEdit = () => {
             };
             setNewAwarded(updatedAwarded);
 
-            console.log("Updated Availaility:", updatedAvailability);
-    
             if (updatedAvailability.movie_id && updatedAvailability.platform_ids.length > 0) {
                 await movieDataService.createAvailability(updatedAvailability);
             }

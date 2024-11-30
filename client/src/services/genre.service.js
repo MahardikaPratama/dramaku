@@ -14,17 +14,14 @@ class GenreDataService {
     }
 
     create(data) {
-        console.log("Data yang ditambahkan: ", data);
         return http.post(`/genres`, data);
     }
 
     update(id, data) {
-        console.log("update Id", id + "Data", data);
         return http.put(`/genres/${id}`, data);
     }
 
     updateName(id, data) {
-        console.log("update nama Id", id + "Data", data);
         return http.put(`/genres/${id}/name`, {
             genre_name: data.genre_name,
         });

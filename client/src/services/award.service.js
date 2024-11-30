@@ -14,12 +14,10 @@ class AwardDataService {
     }
 
     searchByAwardName(keyword, page = 1, limit = 10) {
-        console.log("keyword", keyword);
         return http.get(`/awards/search?keyword=${keyword}&page=${page}&limit=${limit}`);
     }
 
     create(data) {
-        console.log("Data award yang ditambah: ", data);
         return http.post(`/awards`, data);
     }
 

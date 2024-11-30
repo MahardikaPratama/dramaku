@@ -53,7 +53,6 @@ const UpdateProfile = () => {
                 ...newProfile,
                 foto_profil_url: imageFile || null, // Pass the file if updated, otherwise null
             };
-            console.log("Updated Profile: ", updatedProfile);
             await userDataService.updateProfile(updatedProfile.user_id, updatedProfile);
             setFeedbackMessage({ type: "success", text: "Profile updated successfully!" });
             queryClient.invalidateQueries("userProfile");

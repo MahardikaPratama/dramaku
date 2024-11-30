@@ -300,13 +300,10 @@ const CmsDramaInput = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Data to be submitted:", newMovie);
         try {
             const response = await movieDataService.createMovie(newMovie);
-            console.log("Movie created successfully:", response.data);
     
             const movieId = response.data.movie_id;
-            console.log("Movie ID:", movieId);
     
             // Update newAvailability dengan movie_id secara langsung
             const updatedAvailability = {

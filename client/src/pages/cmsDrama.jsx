@@ -46,12 +46,9 @@ const CmsDrama = () => {
         ['movies', { searchTerm: searchedTerm, filterStatus, numberOfShows, currentPage }],
         async () => {
             if (searchTerm) {
-                console.log("Searching for:", searchedTerm);
                 const response = await movieDataService.searchByTitle(searchedTerm, currentPage, numberOfShows);
-                console.log("Search response:", response.data);
                 return response.data;
             } else if (filterStatus !== 'None') {
-                console.log("Filtering by status:", filterStatus);
                 const response = await movieDataService.filterByStatus(filterStatus, currentPage, numberOfShows);
                 return response.data;
             } else {

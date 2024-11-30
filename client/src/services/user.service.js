@@ -49,7 +49,6 @@ class UserDataService {
     }
 
     register(data) {    
-        console.log(data);
         return http.post(`/users/register`, data);
     }
 

@@ -105,7 +105,6 @@ const DetailPage = () => {
         ["comments", idUrl],
         async () => {
             const response = await CommentDataService.getByMovie(idUrl);
-            console.log("Fetched comments:", response.data); // Check if data is fetched here
             return response.data;
         },
         {
@@ -227,7 +226,6 @@ const DetailPage = () => {
                     const wishlist = response.data.map(
                         (movie) => movie.movie_id
                     );
-                    console.log("Wishlist:", wishlist);
                     setIsInWishlist(wishlist.includes(idUrl));
                 }
             } catch (error) {

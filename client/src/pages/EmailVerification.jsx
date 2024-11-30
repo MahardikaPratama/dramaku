@@ -47,7 +47,6 @@ import userService from "../services/user.service";
         const verificationCode = token.join("");
     
         try {
-            console.log({ verification_token: verificationCode, email }); // Log data before sending
             await userService.verifyEmail({ verification_token: verificationCode, email });
             setTimeout(() => {
                 navigate("/email-verified");

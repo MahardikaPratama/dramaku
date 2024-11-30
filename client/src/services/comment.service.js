@@ -22,7 +22,6 @@ class CommentDataService {
     }
 
     filterApprovalStatus(approval_status, page, limit) {
-        console.log("CommentDataService filterApprovalStatus approval_status: ", approval_status);
         return http.get(`/comments/approval?approval_status=${approval_status}&page=${page}&limit=${limit}`);
     }
 
@@ -32,8 +31,6 @@ class CommentDataService {
     }
 
     update(id, data) {
-        console.log("CommentDataService update id: ", id);
-        console.log("CommentDataService update data: ", data);
         return http.put(`/comments/${id}`, data);
     }
 

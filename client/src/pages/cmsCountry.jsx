@@ -40,7 +40,6 @@ const CmsCountry = () => {
     const { data, isLoading, isError, } = useQuery(
         ['countries', { searchTerm, currentPage }],
         async () => {
-            console.log("Fetching countries with:", { searchTerm, currentPage });
             if (searchTerm) {
                 const response = await countryDataService.searchByCountryName(searchTerm, currentPage, entriesPerPage);
                 return response.data;
@@ -57,8 +56,6 @@ const CmsCountry = () => {
     const countries = useMemo(() => {
         return Array.isArray(data) ? data : (data?.data || []);
     }, [data]);
-
-    console.log("Countries:", countries);
 
     const totalEntries = data?.totalEntries || 0;
 

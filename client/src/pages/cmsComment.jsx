@@ -37,8 +37,6 @@ const CmsComment = () => {
         } 
     );
 
-    console.log("data: ", data?.data);
-
     const totalEntries = data?.totalEntries || 0;
 
     const approveMutation = useMutation(

@@ -18,7 +18,6 @@ class CountryDataService {
         formData.append('country_id', data.country_id);  
         formData.append('country_name', data.country_name); 
         if (data.flag) formData.append('flag', data.flag); 
-        console.log("File", formData.get('flag'));
         return http.post('/countries', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',

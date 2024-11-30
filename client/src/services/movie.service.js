@@ -14,17 +14,14 @@ class MovieDataService {
     }
     
     searchMovies(keyword, page = 1, limit = 20) {
-        console.log("keyword:", keyword);
         return http.get(`/movies/search?keyword=${keyword}&page=${page}&limit=${limit}`);
     }
 
     searchByTitle(title, page = 1, limit = 10) {
-        console.log("Title:", title);
         return http.get(`/movies/searchByTitle?title=${title}&page=${page}&limit=${limit}`);
     }
 
     searchByTitleUser(user_id, title, page = 1, limit = 10) {
-        console.log("Title:", title);
         return http.get(`/movies/searchByTitle/user?user_id=${user_id}&title=${title}&page=${page}&limit=${limit}`);
     }
 
@@ -36,7 +33,6 @@ class MovieDataService {
             page,
             limit
         };
-        console.log("Filter-Sort Params:", params);
         return http.get(`/movies/filter-sort`, { params });
     }
 
@@ -129,7 +125,6 @@ class MovieDataService {
     }
 
     updateMovie(id, data) {
-        console.log("Data Update:", data);
         const formData = new FormData();
         formData.append('title', data.title);
         formData.append('alternative_title', data.alternative_title);
@@ -155,7 +150,6 @@ class MovieDataService {
     }
 
     updateApprovalStatus(id) {
-        console.log("Approval Status ID:", id);
         return http.put(`/movies/approval-status/${id}`);
     }
 
@@ -164,12 +158,10 @@ class MovieDataService {
     }
 
     addToWishlist(user_id, movie_id) {
-        console.log("Menambahkan ke Wishlist:", user_id, movie_id);
         return http.post(`/movies/wishlist`, { user_id, movie_id });
     }
 
     removeFromWishlist(user_id, movie_id) {
-        console.log("Menghapus dari Wishlist:", user_id, movie_id);
         return http.delete(`/movies/wishlist/${user_id}/${movie_id}`);
     }
 
