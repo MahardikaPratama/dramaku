@@ -42,11 +42,12 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            secure: true, // Set to true when using HTTPS
-            maxAge: 1000 * 60 * 60 * 24, // 1 day
+            secure: process.env.NODE_ENV === "production", // true hanya jika production
+            maxAge: 1000 * 60 * 60 * 24, // 1 hari
         },
     })
 );
+
 
 // Passport initialization
 app.use(passport.initialize());
@@ -87,7 +88,7 @@ app.get(
         // Send token as a cookie
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true,
+            secure: process.env.NODE_ENV === "production",
             maxAge: 1000 * 60 * 60 * 24, // 1 day
         });
 
