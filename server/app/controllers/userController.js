@@ -196,7 +196,7 @@ exports.login = async (req, res) => {
             res.cookie('token', token, {
                 httpOnly: true,  // Tidak dapat diakses dari JavaScript
                 secure: process.env.NODE_ENV === "production",
-                sameSite: 'Strict', // Mencegah serangan CSRF
+                sameSite: 'None', // Mencegah serangan CSRF
                 maxAge: 86400000, // Token berlaku selama 1 jam
             });
 
@@ -214,7 +214,7 @@ exports.logout = (req, res) => {
     res.cookie('token', '', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'Strict',
+        sameSite: 'None',
         expires: new Date(0), // Kadaluarsa langsung
     });
     return res.status(200).json({ message: "Logged out successfully" });
