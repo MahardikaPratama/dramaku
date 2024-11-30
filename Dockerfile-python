@@ -2,24 +2,17 @@ FROM python:3.9-slim
 
 ENV DOCKER=true
 
-# Menetapkan direktori kerja dalam container
 WORKDIR /app
 
-# Menyalin requirements.txt ke dalam container
 COPY ./requirements.txt ./
 
-# Menginstal dependensi Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Menyalin folder database ke dalam container
 COPY ./database/ ./
 
-# Menyalin wait-for-it.sh ke dalam container
 COPY ./wait-for-it.sh /usr/local/bin/wait-for-it
 
-# Membuat wait-for-it executable
 RUN chmod +x /usr/local/bin/wait-for-it
 
-# Menggunakan wait-for-it untuk menunggu hingga db siap, lalu menjalankan seeder.py
 CMD ["wait-for-it", "db:5432", "--", "python", "seeder.py"]
 

@@ -17,12 +17,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_PORT = os.getenv("DB_PORT")
 DB_NAME = os.getenv("DB_NAME")
-
-# Menentukan DB_HOST yang sesuai dengan lingkungan
-if 'DOCKER' in os.environ:  # Misalnya cek variabel lingkungan DOCKER
-    DB_HOST = "db"  # Gunakan nama kontainer database dalam Docker
-else:
-    DB_HOST = os.getenv("DB_HOST", "localhost")  # Jika di lokal, gunakan localhost
+DB_HOST = os.getenv("DB_HOST")
 
 print ("DB_HOST: ", DB_HOST)
 # Mengatur koneksi ke PostgreSQL
@@ -341,6 +336,8 @@ try:
             elif sheet == 'wishlists':
                 cursor.execute("INSERT INTO wishlists (movie_id, user_id) VALUES (%s, %s)",
                                (row['movie_id'], row['user_id']))
+            print(f"Mengimpor data ke tabel {sheet}...")
+            print(f"Data pada tabel {sheet} berhasil diimpor.")
 
     # Memperbarui sequence berdasarkan nilai maksimum dari kolom ID yang relevan
     sequences = {

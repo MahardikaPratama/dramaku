@@ -13,11 +13,14 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: dika1708
-      POSTGRES_DB: dramaku3
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
 
   python-seeder:
-    image: python:3.9-slim
     build:
       context: .
       dockerfile: Dockerfile-python
@@ -33,7 +36,8 @@ services:
     networks:
       - app-network
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     command: python /app/seeder.py
     healthcheck:
       test: ["CMD", "python", "/app/seeder.py", "--check"]
@@ -41,16 +45,6 @@ services:
       retries: 3
       start_period: 30s
       timeout: 30s
-
-  client:
-    build:
-      context: .
-      dockerfile: Dockerfile-client
-    container_name: react-client
-    ports:
-      - "3000:3000"
-    networks:
-      - app-network
 
   server:
     build:
@@ -62,16 +56,27 @@ services:
     networks:
       - app-network
     depends_on:
-      - db
-      - python-seeder  # Ensure the server waits for python-seeder
+      python-seeder:
+        condition: service_healthy
     environment:
       DB_HOST: db
       DB_USER: postgres
       DB_PASSWORD: dika1708
       DB_NAME: dramaku3
       SERVER_PORT: 8080
-    env_file:
-      - ./server/.env
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile-client
+    container_name: react-client
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      server:
+        condition: service_started
 
   nginx:
     image: nginx:latest
@@ -83,8 +88,10 @@ services:
     networks:
       - app-network
     depends_on:
-      - client
-      - server
+      client:
+        condition: service_started
+      server:
+        condition: service_started
 
 networks:
   app-network:

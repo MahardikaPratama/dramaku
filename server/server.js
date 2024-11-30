@@ -12,9 +12,10 @@ const commentRoutes = require("./app/routes/commentRoutes");
 const countryRoutes = require("./app/routes/countryRoutes");
 const genreRoutes = require("./app/routes/genreRoutes");
 const platformRoutes = require("./app/routes/platformRoutes");
+const pool = require("./app/config/db");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.DB_PORT || 8080;
 
 // Middleware
 app.use(cors({
@@ -51,6 +52,16 @@ app.get(
     "/auth/google",
     passport.authenticate("google", { scope: ["profile", "email"] }),
 );
+
+app.get("/test-db", async (req, res) => {
+    try {
+        const result = await pool.query("SELECT NOW()");
+        res.json({ message: "Database connected", time: result.rows[0].now });
+    } catch (error) {
+        console.error("Database query error", error);
+        res.status(500).json({ message: "Database connection failed" });
+    }
+});
 
 app.get(
     "/auth/google/callback",

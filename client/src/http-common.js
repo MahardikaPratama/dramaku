@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://localhost:8080/api",
+    baseURL: "https://server-production-80b2.up.railway.app/api", // Ganti dengan URL produksi backend
     headers: {
         "Content-type": "application/json",
     },
