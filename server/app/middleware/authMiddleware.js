@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 // Middleware untuk memverifikasi token
 const authenticateToken = (req, res, next) => {
     const token = req.cookies.token;
+    console.log("Token", token);
 
     if (!token) return res.sendStatus(401); // Jika token tidak ada, unauthorized
 

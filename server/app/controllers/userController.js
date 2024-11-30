@@ -190,6 +190,7 @@ exports.login = async (req, res) => {
                 process.env.JWT_SECRET,
                 { expiresIn: '1d' } // Token kadaluarsa setelah 1 hari
             );
+            console.log(token);
 
             // Simpan token di HTTP-only cookie
             res.cookie('token', token, {
