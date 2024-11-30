@@ -19,7 +19,7 @@ const PORT = process.env.DB_PORT || 8080;
 
 // Middleware
 app.use(cors({
-    origin: ["https://dramaku.vercel.app", "http://localhost:3000"], // Ganti dengan URL frontend Anda
+    origin: ["https://dramaku.vercel.app", "http://localhost:3000", "https://dramaku-web.vercel.app", "https://movie-dramaku.vercel.app"], // Ganti dengan URL frontend Anda
     credentials: true // Mengizinkan cookie
 }));
 
