@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require('cookie-parser');
-const session = require('express-session'); 
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 const passport = require("./passport");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const movieRoutes = require("./app/routes/movieRoutes");
 const actorRoutes = require("./app/routes/actorRoutes");
 const userRoutes = require("./app/routes/userRoutes");
@@ -12,29 +12,43 @@ const commentRoutes = require("./app/routes/commentRoutes");
 const countryRoutes = require("./app/routes/countryRoutes");
 const genreRoutes = require("./app/routes/genreRoutes");
 const platformRoutes = require("./app/routes/platformRoutes");
-const pool = require("./app/config/db");
+require("dotenv").config();
 
 const app = express();
-const PORT = process.env.DB_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
-app.use(cors({
-    origin: ["https://dramaku.vercel.app", "http://localhost:3000", "https://dramaku-web.vercel.app", "https://movie-dramaku.vercel.app"], // Ganti dengan URL frontend Anda
-    credentials: true // Mengizinkan cookie
-}));
-
-
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        secure: false, // Ganti dengan true jika menggunakan HTTPS
-        maxAge: 1000 * 60 * 60 * 24 // Set cookie untuk bertahan 1 hari
-    }
-}));
+
+// CORS configuration
+app.use(
+    cors({
+        origin: [
+            "https://dramaku.vercel.app",
+            "http://localhost:3000",
+            "https://dramaku-web.vercel.app",
+            "https://movie-dramaku.vercel.app",
+        ],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+    })
+);
+
+// Session configuration
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            secure: true, // Set to true when using HTTPS
+            maxAge: 1000 * 60 * 60 * 24, // 1 day
+        },
+    })
+);
+
+// Passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -48,42 +62,59 @@ app.use("/api/awards", awardRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/platforms", platformRoutes);
 
-// Google Auth Routes
+// Google OAuth Routes
 app.get(
     "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] }),
+    passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
     "/auth/google/callback",
     passport.authenticate("google", { failureRedirect: "/login" }),
     (req, res) => {
-        // Buat JWT access token
-        const token = jwt.sign({
-            user_id: req.user.user_id,
-            username: req.user.username,
-            email: req.user.email,
-            role: req.user.role
-        }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        // Create JWT access token
+        const token = jwt.sign(
+            {
+                user_id: req.user.user_id,
+                username: req.user.username,
+                email: req.user.email,
+                role: req.user.role,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "1d" }
+        );
 
-        // Kirim token JWT ke client sebagai cookie atau header
-        res.cookie('token', token, {
-            httpOnly: true, // Agar cookie hanya dapat diakses oleh server
-            secure: true,  // Set ini menjadi true jika menggunakan HTTPS
-            maxAge: 1000 * 60 * 60 * 24 // 1 hari
+        // Send token as a cookie
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,
+            maxAge: 1000 * 60 * 60 * 24, // 1 day
         });
+
+        // Redirect to frontend
         res.redirect("https://dramaku.vercel.app/");
     }
 );
 
+// CORS error handling (optional for debugging)
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://dramaku.vercel.app");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack); // Log the error stack for debugging
+    console.error(err.stack);
     res.status(500).json({ message: "Internal Server Error" });
 });
 
-// Server listen
+// Server listening
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
