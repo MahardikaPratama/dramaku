@@ -1,1 +1,1 @@
-server: cd server && npm start
+server: cd server && npm install
