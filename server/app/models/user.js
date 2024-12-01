@@ -1,6 +1,7 @@
 const pool = require('../config/db');
 const crypto = require('crypto');
 const moment = require('moment-timezone');
+const bcrypt = require('bcrypt');
 
 const User = {
     getAll: async (page, limit) => {
@@ -60,7 +61,6 @@ const User = {
                     isVerified, currentTime, currentTime, verificationToken, verificationTokenExpiration
                 ]
             );            
-            console.log('User created successfully');
             // Mengambil data pengguna yang baru saja dimasukkan
             const res = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
             return { ...res.rows[0], verification_token: verificationToken };
@@ -136,9 +136,6 @@ const User = {
     },
 
     updateProfile: async (user_id, data) => {
-        console.log("user_id: ", user_id);
-        console.log("data username: ", data.username);
-        console.log("data foto_profil_url: ", data.foto_profil_url);
         const res = await pool.query(
             'UPDATE users SET username = $1, foto_profil_url = $2, updated_at = CURRENT_TIMESTAMP WHERE user_id = $3 RETURNING *',
             [data.username, data.foto_profil_url, user_id]
@@ -175,6 +172,74 @@ const User = {
         } catch (error) {
             throw new Error('Failed to get total users: ' + error.message);
         }
+    },
+
+    updatePasswordResetToken: async (email) => {
+        const resetToken = crypto.randomInt(1000, 9999).toString(); // Token 4-digit
+        const resetTokenExpiration = moment().tz('Asia/Jakarta').add(3, 'minutes').format('YYYY-MM-DD HH:mm:ss');
+
+        await pool.query(
+            'UPDATE users SET reset_password_token = $1, reset_token_expiration = $2 WHERE email = $3',
+            [resetToken, resetTokenExpiration, email]
+        );
+
+        return resetToken;
+    },
+
+    // Function to verify token
+    verifyResetToken: async (email, token) => {
+        const res = await pool.query(
+            'SELECT * FROM users WHERE email = $1 AND reset_password_token = $2',
+            [email, token]
+        );
+
+        if (res.rows.length === 0) throw new Error("Invalid token");
+
+        const user = res.rows[0];
+        const currentTime = moment().tz('Asia/Jakarta');
+        
+        // Check if token is expired
+        if (moment(user.reset_token_expiration).isBefore(currentTime)) {
+            throw new Error("Token expired");
+        }
+
+        // Clear token after successful verification
+        await pool.query(
+            'UPDATE users SET reset_password_token = NULL, reset_token_expiration = NULL WHERE email = $1',
+            [email]
+        );
+
+        return user; // Valid token
+    },
+
+    // Function to reset password
+    resetPassword: async (email, newPassword) => {
+        try {
+            const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+            // Attempt to update the user's password and clear reset token fields
+            const result = await pool.query(
+                'UPDATE users SET password = $1, reset_password_token = NULL, reset_token_expiration = NULL WHERE email = $2',
+                [hashedPassword, email]
+            );
+
+            return result.rowCount; // rowCount will indicate if rows were affected
+        } catch (error) {
+            throw new Error('Failed to reset password in the database.');
+        }
+    },
+
+    // Method to update the verification/reset token
+    updateVerificationResetToken: async (email) => {
+        const newToken = crypto.randomInt(1000, 9999).toString();
+        const newExpiration = moment().tz('Asia/Jakarta').add(3, 'minutes').format('YYYY-MM-DD HH:mm:ss');
+
+        await pool.query(
+            'UPDATE users SET reset_password_token = $1, reset_token_expiration = $2 WHERE email = $3',
+            [newToken, newExpiration, email]
+        );
+
+        return newToken;
     }
     
 };

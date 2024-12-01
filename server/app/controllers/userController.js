@@ -272,6 +272,83 @@ exports.login = async (req, res) => {
     }
 };
 
+// Request Password Reset
+exports.forgotPassword = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await User.getByEmail(email);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const resetToken = await User.updatePasswordResetToken(email);
+
+        // Send reset token email
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Password Reset Request',
+            text: `Your password reset code is: ${resetToken}`
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ message: 'Password reset code sent, please check your email.' });
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to send password reset code', error });
+    }
+};
+
+// Verify Password Reset Token
+exports.verifyResetToken = async (req, res) => {
+    const { email, reset_password_token } = req.body;
+
+    try {
+        const user = await User.verifyResetToken(email, reset_password_token);
+        res.status(200).json({ message: 'Token verified, proceed to reset password', user_id: user.user_id });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+// Reset Password
+exports.resetPassword = async (req, res) => {
+    const { email, new_password } = req.body;
+
+    try {
+        const resetResult = await User.resetPassword(email, new_password);
+
+        if (resetResult === 0) {
+            return res.status(400).json({ message: 'Failed to reset password - user not found or token not valid.' });
+        }
+
+        res.status(200).json({ message: 'Password reset successful' });
+    } catch (error) {
+        console.error('Error resetting password in resetPassword controller:', error); // Log the specific error
+        res.status(500).json({ message: 'Failed to reset password', error: error.message });
+    }
+};
+
+exports.updateVerificationResetToken = async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ message: 'Email is required' });
+        }
+
+        const newToken = await User.updateVerificationResetToken(email);
+
+        res.status(200).json({ 
+            message: 'Verification reset token updated successfully', 
+            token: newToken 
+        });
+    } catch (error) {
+        console.error('Error updating verification reset token:', error.message);
+        res.status(500).json({ message: 'Failed to update verification reset token' });
+    }
+};
+
 // Logout user
 exports.logout = (req, res) => {
     res.cookie('token', '', {

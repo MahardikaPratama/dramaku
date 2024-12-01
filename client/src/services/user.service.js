@@ -80,6 +80,23 @@ class UserDataService {
     getTotalUsers() {
         return http.get(`/users/count`);
     }
+
+    // New forgot password methods
+    forgotPassword(email) {
+        return http.post(`/users/forgot-password`, { email });
+    }
+
+    verifyResetToken(email, resetToken) {
+        return http.post(`/users/verify-reset-token`, { email, reset_password_token: resetToken });
+    }
+
+    resetPassword(email, newPassword) {
+        return http.post(`/users/reset-password`, { email, new_password: newPassword });
+    }
+
+    updateVerificationResetToken(email) {
+        return http.post(`/users/update-verification-reset-token`, { email });
+    }
     
 }
 
