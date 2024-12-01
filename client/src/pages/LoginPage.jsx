@@ -37,8 +37,9 @@ const LoginPage = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.open("http://localhost:8080/auth/google", "_self"); 
+        window.open("https://dramaku-production.up.railway.app/auth/google", "_self");
     };
+    
 
     return (
         <div className="flex items-center justify-center min-h-screen text-gray-300 bg-gray-900">
