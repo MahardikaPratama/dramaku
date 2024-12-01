@@ -49,20 +49,21 @@ class UserDataService {
     }
 
     register(data) {    
-        return http.post(`/users/register`, data);
+        return http.post(`/users/register`, data, { withCredentials: true });
     }
-
+    
     login(data) {
-        return http.post(`/users/login`, data);
+        return http.post(`/users/login`, data, { withCredentials: true });
     }
-
+    
     logout() {
-        return http.post(`/users/logout`);
+        return http.post(`/users/logout`, {}, { withCredentials: true });
     }
-
+    
     getProfile() {
-        return http.get(`/users/profile`);
+        return http.get(`/users/profile`, { withCredentials: true });
     }
+    
 
     getByEmail(email) {
         return http.get(`/users/email/${email}`);
