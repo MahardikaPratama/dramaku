@@ -6,7 +6,7 @@ const { authenticateToken } = require('../middleware/authMiddleware');
 const upload = require('../middleware/upload');
 
 router.get('/count', userController.getTotalUsers);
-router.get('/profile', authenticateToken, userController.getProfile); // Mendapatkan profile user
+router.get('/profile', userController.getProfile); // Mendapatkan profile user
 router.get('/', userController.getAll); // Mendapatkan semua user
 router.get('/search', userController.searchUserByUsername); // Mencari user berdasarkan username
 router.get('/:id', userController.getById); // Mendapatkan user berdasarkan ID
