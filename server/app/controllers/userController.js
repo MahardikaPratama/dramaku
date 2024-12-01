@@ -222,8 +222,8 @@ exports.logout = (req, res) => {
 
 exports.getProfile = async (req, res) => {
     try {
-        console.log("req header", req.headers);
-        console.log("req cookies", req.cookies);
+        console.log("res", req);
+        console.log("req", res);
         // Mendapatkan token dari cookie
         const token = req.cookies.token;
         if (!token) {
