@@ -73,7 +73,6 @@ app.get(
     "/auth/google/callback",
     passport.authenticate("google", { failureRedirect: "/login" }),
     (req, res) => {
-        console.log("Request User:", req.user);
         // Create JWT access token
         const token = jwt.sign(
             {
@@ -86,7 +85,7 @@ app.get(
             { expiresIn: "1d" }
         );
 
-        cosole.log("Token:", token);
+        console.log("Token:", token);
 
         // Send token as a cookie
         res.cookie("token", token, {
