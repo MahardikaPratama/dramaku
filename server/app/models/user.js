@@ -1,4 +1,6 @@
 const pool = require('../config/db');
+const crypto = require('crypto');
+const moment = require('moment-timezone');
 
 const User = {
     getAll: async (page, limit) => {
@@ -43,21 +45,30 @@ const User = {
     },
 
     create: async (data) => {
-        const { username, email, password = null } = data;
+        const { username, email, password = null, role = 'USER', foto_profil_url = '' } = data;
+        const verificationToken = crypto.randomInt(1000, 9999).toString();
+        const isVerified = false;
+        const verificationTokenExpiration = moment().tz('Asia/Jakarta').add(3, 'minutes').format('YYYY-MM-DD HH:mm:ss');
+        const currentTime = moment().tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss');
         try {
-            // Menambahkan pengguna ke dalam tabel `users`
+            // Insert data langsung ke tabel `users`
             await pool.query(
-                'INSERT INTO users (username, email, password, role, created_at, updated_at) VALUES ($1, $2, $3, $4, NOW(), NOW())',
-                [username, email, password, 'USER']
-            );
-    
+                `INSERT INTO users (username, email, password, role, foto_profil_url, is_verified, created_at, updated_at, verification_token, verification_token_expiration) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+                [
+                    username, email, password || null, role, foto_profil_url || null, 
+                    isVerified, currentTime, currentTime, verificationToken, verificationTokenExpiration
+                ]
+            );            
+            console.log('User created successfully');
             // Mengambil data pengguna yang baru saja dimasukkan
             const res = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-            return res.rows[0];
+            return { ...res.rows[0], verification_token: verificationToken };
         } catch (error) {
             throw new Error('Failed to create user: ' + error.message);
         }
     },
+    
     
 
     update: async (user_id, data) => {
@@ -67,6 +78,61 @@ const User = {
             [username, email, password, user_id]
         );
         return res.rows[0];
+    },
+
+    updateVerify: async (user_id, data) => {
+        const fields = [];
+        const values = [];
+        let index = 1;
+
+        for (const key in data) {
+            fields.push(`${key} = $${index}`);
+            values.push(data[key]);
+            index++;
+        }
+
+        values.push(user_id);
+        const query = `UPDATE users SET ${fields.join(', ')} WHERE user_id = $${index} RETURNING *`;
+
+        const res = await pool.query(query, values);
+        return res.rows[0];
+    },
+    
+    // Add a method to resend verification token
+    updateVerificationToken: async (user_id) => {
+        const newToken = crypto.randomInt(1000, 9999).toString();
+        // const newExpiration = moment().tz('Asia/Jakarta').add(3, 'minutes').toISOString();
+        const newExpiration = moment().tz('Asia/Jakarta').add(3, 'minutes').format('YYYY-MM-DD HH:mm:ss'); // Set ke format WIB
+  
+
+        await pool.query(
+            'UPDATE users SET verification_token = $1, verification_token_expiration = $2 WHERE user_id = $3',
+            [newToken, newExpiration, user_id]
+        );
+
+        return newToken;
+    },
+
+    verifyToken: async (user_id, token) => {
+        const res = await pool.query(
+            'SELECT * FROM users WHERE user_id = $1 AND verification_token = $2',
+            [user_id, token]
+        );
+
+        if (res.rows.length === 0) throw new Error("Invalid token");
+        
+        const user = res.rows[0];
+        const currentTime = moment().tz('Asia/Jakarta');
+
+        if (moment(user.verification_token_expiration).isBefore(currentTime)) {
+            throw new Error("Token expired");
+        }
+
+        await pool.query(
+            'UPDATE users SET is_verified = TRUE, verification_token = NULL, verification_token_expiration = NULL WHERE user_id = $1',
+            [user_id]
+        );
+        return user;
     },
 
     updateProfile: async (user_id, data) => {

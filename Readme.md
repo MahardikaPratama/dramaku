@@ -39,14 +39,33 @@
 </p>  
 <p>All data is sourced from <a href="https://www.themoviedb.org/">The Movie Database (TMDb)</a>, providing up-to-date information on <strong>1000+ dramas, 2000+ actors, and thousands of user reviews and comments</strong>. DramaKu allows users to:  
 </p>  
-<ul>  
-  <li>Search for dramas by title, genre, or release year.</li>  
-  <li>View drama details such as synopsis, ratings, and cast lists.</li>  
-  <li>Write reviews and rate their favorite dramas.</li>  
-  <li>Save a personal watchlist to bookmark dramas they want to watch.</li>  
-</ul>  
+<ul>
+  <li>Main Page: displays popular dramas, search functionality, and filters by genre or country.</li>
+  <li>Drama Details: provides complete information about a drama, including synopsis, ratings, cast, and reviews.</li>
+  <li>Search and Filter: search dramas by title, genre, or release year, with filter options for recommendations.</li>
+  <li>CMS for multiple entities: manage data for dramas, actors, countries, genres, comments, awards, and users.</li>
+  <li>User Features: registration, login (including Google/social login), drama wishlist, and profile management.</li>
+  <li>Validation: validate dramas, reviews, and block users who violate platform policies.</li>
+  <li>CRUD: create, read, update, and delete data for dramas, actors, awards, genres, reviews, and countries.</li>
+  <li>Additional Features: wishlist/bookmark dramas, reset password, and email confirmation during registration.</li>
+  <li>Dashboard: displays statistics for total dramas, actors, genres, comments, and users.</li>
+</ul> 
 <p>DramaKu is designed to deliver an engaging user experience with a responsive interface, intuitive navigation, and fast performance. With a regularly updated database, DramaKu is the ultimate choice for drama enthusiasts seeking comprehensive and up-to-date references.</p>  
 
+<h2>Demo DramaKu</h2>  
+<p>You can try the DramaKu application at the following link: <a href="https://dramaku.vercel.app/" target="_blank">https://dramaku.vercel.app/</a>.</p>  
+
+<h3>How to Login</h3>  
+<p><strong>As an Admin:</strong></p>  
+<ul>
+  <li><strong>Email:</strong> admin@gmail.com</li>  
+  <li><strong>Password:</strong> admin1234</li>  
+</ul>  
+
+<p><strong>As a User:</strong></p>  
+<ul>
+  <li>Register through the <strong>Register</strong> menu using your email or Google account.</li>  
+</ul>
 
 
 <h1 align="center">🌟 Contributors 🌟</h1>

@@ -20,6 +20,8 @@ router.delete('/:id', userController.deleteUsers); // Menghapus user
 router.post('/register', userController.register); // Register user
 router.post('/login', userController.login); // Login user
 router.post('/logout', userController.logout); // Logout user
+router.post('/verify-email', userController.verifyEmail); // Verifikasi email
+router.post('/resend-token', userController.handleResendVerification); // Resend token verifikasi
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 router.get('/auth/google/callback', passport.authenticate('google', {
     successRedirect: '/',
